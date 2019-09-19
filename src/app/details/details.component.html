@@ -1,0 +1,7 @@
+<button class="btn btn-primary" (click)="toggleDetails()">display details</button>
+
+<p *ngIf="showingDetails">password = oeuiwefnjs</p>
+
+<p *ngFor="let click of clicks" [ngStyle]="click.style">
+  {{click.number}}
+</p>
