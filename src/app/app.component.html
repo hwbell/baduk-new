@@ -1,14 +1,8 @@
 <!-- Toolbar -->
 <div class="app">
-  <h3>The App component is where it all starts ... </h3>
+  <app-header></app-header>
 
-  <hr>
-  <app-servers></app-servers>
-  <hr>
+  <h1>{{ title }}</h1>
 
-  <app-details></app-details>
-
-
-
-  <div class="eidogo-player-auto" sgf="./assets/games/shin-jinseo.sgf"></div>
+  <router-outlet></router-outlet>
 </div>
