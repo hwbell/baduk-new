@@ -1,4 +1,7 @@
-<div>
-    <a *ngFor="let link of links" routerLink="{{link}}" routerLinkActive="active">{{link}} page</a>
+<div class="navigator center-all-row">
+    <div class="center-all-col link-holder" *ngFor="let link of links">
+      <span class="{{link.icon}}"></span>
+      <a routerLink="{{link.route}}" routerLinkActive="active">{{link.route}}</a>
+    </div>
 </div>
 

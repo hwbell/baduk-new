@@ -24,16 +24,6 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-app'`, () => {
-    expect(app.title).toEqual("Baduk News");
-  });
-
-  it("should render title", () => {
-    fixture.detectChanges();
-    expect(compiled.querySelector("h1")).toBeTruthy();
-    expect(compiled.querySelector("h1").textContent).toContain("Baduk News");
-  });
-
   it("should render the header", () => {
     expect(compiled.querySelector("app-header")).toBeTruthy();
   });

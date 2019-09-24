@@ -14,6 +14,7 @@ import { ReviewFormComponent } from './review-form/review-form.component';
 import { ArticleFormComponent } from './article-form/article-form.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavigatorComponent } from './navigator/navigator.component';
+import { FooterComponent } from './home-page/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NavigatorComponent } from './navigator/navigator.component';
     ArticleFormComponent,
     PageNotFoundComponent,
     NavigatorComponent,
+    FooterComponent,
   ],
   imports: [
     AppRoutingModule,

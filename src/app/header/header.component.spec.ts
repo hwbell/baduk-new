@@ -31,4 +31,10 @@ describe("HeaderComponent", () => {
     const navigator = compiled.querySelector("app-navigator");
     expect(navigator).toBeTruthy();
   });
+
+  it(`should render the title`, () => {
+    const navigator = compiled.querySelector("h1");
+    expect(navigator).toBeTruthy();
+  });
+
 });

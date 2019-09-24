@@ -1,0 +1,12 @@
+<div id="footer-content" class="row">
+  <div *ngFor="let card of cards" class="col-md-4 col-sm-6 col-xs-12 footer-card">
+    <div class="card-content space-all-col">
+        <ul class="card-title">{{card.title}}</ul>
+        <li *ngFor="let text of card.text">{{text}}</li>
+
+        <a routerLink="{{card.route}}" routerLinkActive="active">
+          <button class="btn btn-outline-light">{{card.buttonText}}</button>
+        </a>
+    </div>
+  </div>
+</div>
