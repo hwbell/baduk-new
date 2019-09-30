@@ -1,12 +1,28 @@
-<div class="about-page page">
-  <div id="content" class="center-all-col">
-    <div id="text-content" class="center-all-col">
-      <h2>{{ title }}</h2>
-      <h5>{{ subtitle }}</h5>
-      <p class="paragraph">{{ paragraph }}</p>
-      <a id="wiki-link" target="_blank" href="{{ links.wiki.route }}">{{
-        links.wiki.text
-      }}</a>
+<div id="about-page" class="page">
+  <div class="content top-center-all-col">
+    <div class="text-content center-all-col">
+      <h2>{{ top.title }}</h2>
+      <h5>{{ top.subtitle }}</h5>
+      <p class="paragraph">{{ top.paragraph }}</p>
+      <a id="wiki-link" target="_blank" href="{{ links.wiki.route }}">
+        {{ links.wiki.text }}</a
+      >
+
+      <div class="left-all-col" *ngFor="let section of sections">
+        <h5>{{ section.subtitle }}</h5>
+        <div class="left-all-row">
+          <img
+            *ngFor="let image of section.image"
+            src="{{ image }}"
+            alt="a sample diagram"
+          />
+        </div>
+        <p
+          *ngFor="let paragraph of section.paragraph"
+          class="paragraph"
+          innerHTML="{{ paragraph }}"
+        ></p>
+      </div>
     </div>
   </div>
 </div>

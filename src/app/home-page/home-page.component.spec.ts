@@ -28,10 +28,10 @@ describe("HomePageComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should render the content`, () => {
-    expect(page.title).toEqual(`Welcome to GoShare`);
-    // expect(page.subtitle).toEqual(`a forum for Go players of all strengths to analyze games,
-    // ask & answer questions, and delve more deeply into the fascinating game of Go`);
+  it(`should render the correct elements`, () => {
+    expect(compiled.querySelector(".page")).toBeTruthy();
+    expect(compiled.querySelector("#home-page")).toBeTruthy();
+    expect(compiled.querySelector(".content")).toBeTruthy();
   });
 
   it(`should render title and subtitle`, () => {

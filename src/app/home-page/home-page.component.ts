@@ -13,15 +13,15 @@ export class HomePageComponent implements OnInit {
   buttons = [
     {
       text: 'What is go?',
-      route: 'about'
+      route: '/about'
     },
     {
       text: 'Post a review',
-      route: 'reviews'
+      route: '/reviews'
     },
     {
       text: 'Go news',
-      route: 'news'
+      route: '/news'
     }
   ]
   constructor() { }
