@@ -9,19 +9,11 @@ export class ReviewsPageComponent implements OnInit {
 
   text = Text;
 
-  buttons = [
+  links = [
     {
       text: 'post a review/question',
       route: '/upload'
     },
-    // {
-    //   text: 'Answer a ',
-    //   route: 'reviews'
-    // },
-    // {
-    //   text: 'Go news',
-    //   route: 'news'
-    // }
   ]
   constructor() { }
 

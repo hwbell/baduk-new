@@ -1,19 +1,18 @@
 <div>
   <button
-    class="btn btn-primary"
     type="button"
-    data-toggle="collapse"
-    data-target="#collapseExample"
-    aria-expanded="false"
-    aria-controls="collapseExample"
+    class="btn btn-outline-primary"
+    (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapsedForm"
   >
-    post a game / question
+    Toggle
   </button>
-  <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-      richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
-      anderson cred nesciunt sapiente ea proident.
+  <div id="collapsedForm" [ngbCollapse]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        You can collapse this card by clicking Toggle
+      </div>
     </div>
   </div>
 </div>

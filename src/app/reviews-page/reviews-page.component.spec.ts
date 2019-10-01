@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from "@angular/router/testing";
-
+import { ArticleFormComponent } from "./article-form/article-form.component";
 import { ReviewsPageComponent } from './reviews-page.component';
 import { Text } from './reviews-page.text.js';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 describe('ReviewsPageComponent', () => {
   let fixture;
@@ -11,8 +12,8 @@ describe('ReviewsPageComponent', () => {
   // let text;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [ReviewsPageComponent]
+      imports: [RouterTestingModule, NgbModule],
+      declarations: [ReviewsPageComponent, ArticleFormComponent]
     }).compileComponents();
   }));
 
@@ -35,6 +36,8 @@ describe('ReviewsPageComponent', () => {
     expect(compiled.querySelector(".content")).toBeTruthy();
     expect(compiled.querySelector("h2")).toBeTruthy();
     expect(compiled.querySelector("h5")).toBeTruthy();
+    expect(compiled.querySelector("app-article-form")).toBeTruthy();
+
   });
 
   it('should have the text imported and used', () => {
@@ -44,13 +47,13 @@ describe('ReviewsPageComponent', () => {
   });
 
   it('should render the buttons', () => {
-    expect(page.buttons).toEqual([
+    expect(page.links).toEqual([
       {
         text: 'post a review/question',
         route: '/upload'
       }
     ]);
 
-    expect(compiled.querySelector("button")).toBeTruthy();
+    // expect(compiled.querySelector("button")).toBeTruthy();
   })
 });

@@ -1,27 +1,26 @@
 <div id="reviews-page" class="page">
-    <div class="content top-center-all-col">
-      <div class="text-content center-all-col">
-
-          <h2>{{ text.page.top.title }}</h2>
-          <h5>{{ text.page.top.subtitle }}</h5>
-
-          <div class="pull-to-start">
-              <a
-                *ngFor="let button of buttons"
-                routerLink="{{ button.route }}"
-                routerLinkActive="active"
-              >
-                <button class="btn btn-outline-primary">
-                  {{ button.text }}
-                </button>
-              </a>
-            </div>
-          <p class="paragraph">{{ text.page.top.paragraph }}</p>
-          <h5>{{ text.page.middle.subtitle }}</h5>
-          <p *ngFor="let paragraph of text.page.middle.paragraph" class="paragraph" innerHTML="{{paragraph}}"></p>
-
-          <h5>{{ text.page.bottom.subtitle }}</h5>
-          <p *ngFor="let paragraph of text.page.bottom.paragraph" class="paragraph" innerHTML="{{paragraph}}"></p>
+  <div class="content top-center-all-col">
+    <div class="text-content center-all-col">
+      <h2>{{ text.page.top.title }}</h2>
+      <h5>{{ text.page.top.subtitle }}</h5>
+      <div class="pull-to-start">
+        <app-article-form></app-article-form>
       </div>
+
+      <p class="paragraph">{{ text.page.top.paragraph }}</p>
+      <h5>{{ text.page.middle.subtitle }}</h5>
+      <p
+        *ngFor="let paragraph of text.page.middle.paragraph"
+        class="paragraph"
+        innerHTML="{{ paragraph }}"
+      ></p>
+
+      <h5>{{ text.page.bottom.subtitle }}</h5>
+      <p
+        *ngFor="let paragraph of text.page.bottom.paragraph"
+        class="paragraph"
+        innerHTML="{{ paragraph }}"
+      ></p>
     </div>
   </div>
+</div>
