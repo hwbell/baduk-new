@@ -1,3 +1,5 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css'
+
 /* You can add global styles to this file, and also import other style files */
 $paragraph-fontSize: 16px
 $icon-fontSize: 16px
@@ -52,6 +54,9 @@ $icon-fontSize: 16px
 .text-content
   max-width: 650px
 
+// basic input rules
+.mat-input-element
+  // padding: 10px
 // icons
 @mixin text-icon
   background-size: 100% 100%
@@ -73,19 +78,3 @@ $icon-fontSize: 16px
 .square-icon
   background: url('./assets/images/square.png')
   @include text-icon
-
-//   // ng-bootstrap collapse animation
-.collapse, .collapse.show
-  display: block !important
-  // max-height: 1px !important
-  -moz-transition: all 0.3s ease-in-out
-  -o-transition: all 0.3s ease-in-out
-  -webkit-transition: all 0.3s ease-in-out
-  -ms-transition: all 0.3s ease-in-out
-  transition: all 0.3s ease-in-out
-.collapse
-  opacity: 0
-  // height: 0px
-.collapse.show
-  opacity: 1
-  height: 100%

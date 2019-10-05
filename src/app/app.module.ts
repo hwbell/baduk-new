@@ -3,9 +3,15 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
+import { MatSliderModule } from '@angular/material/slider';
 import { MatExpansionModule } from "@angular/material/expansion";
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule
+} from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
@@ -41,9 +47,12 @@ import { FooterComponent } from "./home-page/footer/footer.component";
     FormsModule,
     HttpClientModule,
     MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+    MatSliderModule,
     NgbModule
   ],
   providers: [],

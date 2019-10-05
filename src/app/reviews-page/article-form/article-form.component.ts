@@ -16,15 +16,33 @@ export class ArticleFormComponent implements OnInit {
     "A come from behind win"
   );
 
-  public isCollapsed = true;
+  public formOpen = true;
   submitted = false;
 
-  toggleCollapse () {
+  srcResult = null;
+
+  toggleForm () {
     console.log('toggling')
-    this.isCollapsed = !this.isCollapsed;
+    this.formOpen = !this.formOpen;
   }
   onSubmit() {
     this.submitted = true;
+  }
+
+  onFileSelected() {
+    const inputNode: any = document.querySelector('#file');
+
+    if (typeof (FileReader) !== 'undefined') {
+      const reader = new FileReader();
+
+      reader.onload = (e: any) => {
+        this.srcResult = e.target.result;
+      };
+
+      reader.readAsArrayBuffer(inputNode.files[0]);
+    }
+
+    console.log(inputNode.files[0])
   }
 
   ngOnInit() {}

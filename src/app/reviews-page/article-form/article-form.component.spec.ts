@@ -3,6 +3,15 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FormBuilder } from "@angular/forms";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from "@angular/material/expansion";
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule
+} from "@angular/material";
 
 import { Thread } from "../../classes/thread";
 import { ArticleFormComponent } from "./article-form.component";
@@ -14,7 +23,19 @@ describe("ArticleFormComponent", () => {
   let testModel;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, FormsModule, ReactiveFormsModule, NgbModule],
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbModule,
+        MatButtonModule,
+        MatExpansionModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatRippleModule
+      ],
       declarations: [ArticleFormComponent]
     }).compileComponents();
   }));
