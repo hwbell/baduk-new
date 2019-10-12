@@ -1,13 +1,13 @@
 <div class="example-container">
   <button
-    *ngIf="formOpen"
+    *ngIf="!formOpen"
     (click)="toggleForm()"
     class="btn btn-outline-primary"
   >
     Post a game || question
   </button>
   <!-- the form that will open / close -->
-  <div class="form-container" *ngIf="!formOpen">
+  <div class="form-container" *ngIf="formOpen">
     <div>
       <!-- buttons to select file or cancel -->
       <button
@@ -16,25 +16,22 @@
         type="button"
         (click)="fileInput.click()"
       >
-        Choose File
+        {{ !fileSelected ? "choose file" : "choose another file" }}
       </button>
-      <button
-        (click)="toggleForm()"
-        class="btn btn-outline-danger float-right"
-      >
-        Cancel
+      <button (click)="toggleForm()" class="btn btn-outline-danger float-right">
+        cancel
       </button>
     </div>
 
+    <p id="file-label" *ngIf="fileSelected">{{ fileName }}</p>
+
     <input
       hidden
-      (change)="onFileSelected()"
+      (change)="onFileSelected($event)"
       #fileInput
       type="file"
       id="file"
     />
-
-    <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
 
     <mat-form-field>
       <textarea
