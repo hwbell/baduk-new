@@ -1,8 +1,12 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ArticleFormComponent } from "./article-form/article-form.component";
+import {ReviewsComponent} from './reviews/reviews.component';
+import {GameReviewComponent} from './game-review/game-review.component';
 import { ReviewsPageComponent } from "./reviews-page.component";
+
 import { Text } from "./reviews-page.text.js";
+
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -13,6 +17,8 @@ import {
   MatInputModule,
   MatRippleModule
 } from "@angular/material";
+import { HttpClient } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 
 describe("ReviewsPageComponent", () => {
   let fixture;
@@ -30,9 +36,10 @@ describe("ReviewsPageComponent", () => {
         MatFormFieldModule,
         MatInputModule,
         MatRippleModule,
-        MatExpansionModule
+        MatExpansionModule,
+        HttpClientModule
       ],
-      declarations: [ReviewsPageComponent, ArticleFormComponent]
+      declarations: [ReviewsPageComponent, ArticleFormComponent, ReviewsComponent, GameReviewComponent]
     }).compileComponents();
   }));
 
@@ -54,6 +61,7 @@ describe("ReviewsPageComponent", () => {
     expect(compiled.querySelector(".content")).toBeTruthy();
     expect(compiled.querySelector("h2")).toBeTruthy();
     expect(compiled.querySelector("h5")).toBeTruthy();
+    expect(compiled.querySelector("app-reviews")).toBeTruthy();
     expect(compiled.querySelector("app-article-form")).toBeTruthy();
   });
 

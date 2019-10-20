@@ -12,6 +12,8 @@ import {
   MatInputModule,
   MatRippleModule
 } from "@angular/material";
+import { HttpClientModule } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 import { Thread } from "../../../classes/thread";
 import { ArticleFormComponent } from "./article-form.component";
@@ -34,7 +36,8 @@ describe("ArticleFormComponent", () => {
         MatExpansionModule,
         MatFormFieldModule,
         MatInputModule,
-        MatRippleModule
+        MatRippleModule,
+        HttpClientModule
       ],
       declarations: [ArticleFormComponent]
     }).compileComponents();

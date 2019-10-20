@@ -9,12 +9,19 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { ServerService } from 'src/services/server.service';
 @Component({
   selector: "app-article-form",
   templateUrl: "./article-form.component.html",
-  styleUrls: ["./article-form.component.sass"]
+  styleUrls: ["./article-form.component.sass"],
+  providers: [ServerService]
 })
 export class ArticleFormComponent implements OnInit {
+
+  constructor( private serverService: ServerService ) {
+
+  }
+
   model = new Thread(
     "Lee Changho wins",
     {

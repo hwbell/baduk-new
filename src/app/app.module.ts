@@ -26,6 +26,8 @@ import { ArticleFormComponent } from "./reviews-page/article-form/article-form.c
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { NavigatorComponent } from "./navigator/navigator.component";
 import { FooterComponent } from "./home-page/footer/footer.component";
+import { GameReviewComponent } from './reviews-page/game-review/game-review.component';
+import { ReviewsComponent } from './reviews-page/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FooterComponent } from "./home-page/footer/footer.component";
     ArticleFormComponent,
     PageNotFoundComponent,
     NavigatorComponent,
-    FooterComponent
+    FooterComponent,
+    GameReviewComponent,
+    ReviewsComponent
   ],
   imports: [
     AppRoutingModule,
