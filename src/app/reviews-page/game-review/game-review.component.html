@@ -1,4 +1,6 @@
 <div class="game-review">
   <p class="review-title">{{gameReview.title}}</p>
   <p class="review-description">{{gameReview.description}}</p>
+  <!-- VERY IMPORTANT!!! use the syntax below to bind to a custom property other than id or class or style etc. -->
+  <div id="game-{{selector}}" class="eidogo-player-auto" attr.sgf="{{gameReview.game}}"></div>
 </div>

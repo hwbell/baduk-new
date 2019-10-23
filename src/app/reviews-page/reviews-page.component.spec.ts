@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ArticleFormComponent } from "./article-form/article-form.component";
-import {ReviewsComponent} from './reviews/reviews.component';
-import {GameReviewComponent} from './game-review/game-review.component';
+import { ReviewsComponent } from "./reviews/reviews.component";
+import { GameReviewComponent } from "./game-review/game-review.component";
 import { ReviewsPageComponent } from "./reviews-page.component";
+import { GamePlayerComponent } from "../game-player/game-player.component";
 
 import { Text } from "./reviews-page.text.js";
 
@@ -39,7 +40,13 @@ describe("ReviewsPageComponent", () => {
         MatExpansionModule,
         HttpClientModule
       ],
-      declarations: [ReviewsPageComponent, ArticleFormComponent, ReviewsComponent, GameReviewComponent]
+      declarations: [
+        ReviewsPageComponent,
+        ArticleFormComponent,
+        ReviewsComponent,
+        GameReviewComponent,
+        GamePlayerComponent
+      ]
     }).compileComponents();
   }));
 

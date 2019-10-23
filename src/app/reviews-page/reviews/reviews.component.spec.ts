@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReviewsComponent } from './reviews.component';
 import {GameReviewComponent} from '../game-review/game-review.component';
+import {GamePlayerComponent} from '../../game-player/game-player.component';
+
 const sampleReviews = [
   {
     type: 'review',
@@ -28,7 +30,7 @@ describe('ReviewsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [],
-      declarations: [ReviewsComponent, GameReviewComponent]
+      declarations: [ReviewsComponent, GameReviewComponent, GamePlayerComponent]
     }).compileComponents();
   }));
 
