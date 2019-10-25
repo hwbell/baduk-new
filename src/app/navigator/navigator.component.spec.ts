@@ -36,7 +36,7 @@ describe('NavigatorComponent', () => {
   it('should have links for each page', () => {
     const links = compiled.querySelectorAll("a");
     expect(links).toBeTruthy();
-    expect(links.length).toBe(4);
+    expect(links.length).toBe(5);
   });
 
 

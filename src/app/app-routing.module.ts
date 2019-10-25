@@ -5,6 +5,7 @@ import { AboutPageComponent } from "./about-page/about-page.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { NewsPageComponent } from './news-page/news-page.component';
 import { ReviewsPageComponent } from './reviews-page/reviews-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "reviews",
     component: ReviewsPageComponent,
+  },
+  {
+    path: "profile",
+    component: ProfilePageComponent,
   },
   { path: '**', component: PageNotFoundComponent }
 ];

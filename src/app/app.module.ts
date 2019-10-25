@@ -28,6 +28,7 @@ import { NavigatorComponent } from "./navigator/navigator.component";
 import { FooterComponent } from "./home-page/footer/footer.component";
 import { GameReviewComponent } from './reviews-page/game-review/game-review.component';
 import { ReviewsComponent } from './reviews-page/reviews/reviews.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ReviewsComponent } from './reviews-page/reviews/reviews.component';
     NavigatorComponent,
     FooterComponent,
     GameReviewComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ProfilePageComponent
   ],
   imports: [
     AppRoutingModule,

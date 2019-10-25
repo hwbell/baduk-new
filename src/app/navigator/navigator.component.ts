@@ -22,6 +22,10 @@ export class NavigatorComponent implements OnInit {
     {
       route: `news`,
       icon: `far fa-newspaper`
+    },
+    {
+      route: `profile`,
+      icon: `fas fa-user`
     }
   ];
   constructor() {}
