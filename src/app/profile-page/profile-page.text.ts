@@ -22,7 +22,12 @@ const page = [
     makes a single move that decides the match. His endgame skill is one of the
     strongest in history.`,
     avatar: 'http://file.tygem.com/updata/bbs/20118/153746110828-nong01.jpg',
-    reviews: [], // link to reviews
+    activity: {
+      reviews: [{},{},{}],
+      comments: [{},{},{},{}],
+      articles: [{},{}]
+    }, // link to reviews
+    links: ["https://en.wikipedia.org/wiki/Lee_Chang-ho", "https://senseis.xmp.net/?YiChangHo"] // link to server pages, or anything else
   }
 
 ];

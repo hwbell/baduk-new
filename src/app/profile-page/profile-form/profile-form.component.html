@@ -1,0 +1,88 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">date of birth</label>
+        <div class="input-group">
+          <input
+            id="dateOfBirth"
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            ngbDatepicker
+            #dp="ngbDatepicker"
+          />
+          <button
+            class="btn btn-outline-secondary calendar"
+            (click)="dp.toggle()"
+            type="button"
+          >
+            choose date
+          </button>
+        </div>
+
+        <input
+          id="name"
+          class="form-control"
+          type="text"
+          placeholder="name / usernamme"
+        />
+        <input
+          id="email"
+          class="form-control"
+          type="text"
+          placeholder="email"
+        />
+        <input
+          id="play-method"
+          class="form-control"
+          type="text"
+          placeholder="where do you play go?"
+        />
+        <input
+          hidden
+          (change)="onFileSelected($event)"
+          #fileInput
+          type="file"
+          id="file"
+        />
+        <div class="left-all-col">
+          <label for="avatar">choose an avatar</label>
+          <button
+            id="upload-button"
+            class="btn btn-outline-primary"
+            type="button"
+            (click)="fileInput.click()"
+          >
+            {{ !fileSelected ? "choose file" : "choose another file" }}
+          </button>
+        </div>
+        <p id="avatar-label" *ngIf="fileSelected">{{ fileName }}</p>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<button class="btn btn-outline-info" (click)="open(content)">
+  edit profile
+</button>

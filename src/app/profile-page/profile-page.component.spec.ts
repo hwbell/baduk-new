@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ProfilePageComponent } from "./profile-page.component";
+import { ProfileFormComponent } from "./profile-form/profile-form.component";
 
 import { Text } from "./profile-page.text.js";
 
@@ -36,7 +37,7 @@ describe("ProfilePageComponent", () => {
         MatExpansionModule,
         HttpClientModule
       ],
-      declarations: [ProfilePageComponent]
+      declarations: [ProfilePageComponent, ProfileFormComponent]
     }).compileComponents();
   }));
 
@@ -53,7 +54,7 @@ describe("ProfilePageComponent", () => {
   });
 
   it("should render the correct elements", () => {
-    [".page", "#profile-page", ".content", ".text-content", "h2", "h5"].forEach(
+    [".page", "#profile-title", "#profile-page", ".content", ".text-content", "h2", "app-profile-form"].forEach(
       selector => {
         expect(compiled.querySelector(selector)).toBeTruthy();
       }
@@ -62,10 +63,27 @@ describe("ProfilePageComponent", () => {
 
   it("should have the text imported and used", () => {
     expect(page.text).toEqual(Text);
+
+    // info containers
     expect(compiled.querySelector("h2").textContent).toContain(Text.page[0].name);
-    expect(compiled.querySelector("h5").textContent).toContain(Text.page[0].rank);
+
+    // activity indicators
+    expect(compiled.querySelector("#profile-activity")).toBeTruthy();
+    expect(compiled.querySelectorAll(".activity-stat").length).toBe(3);
+    expect(compiled.querySelector("i")).toBeTruthy();
+    expect(compiled.querySelector(".fa-leaf")).toBeTruthy();
+
     expect(compiled.querySelector("#profile-info").textContent).toContain(Text.page[0].info);
     expect(compiled.querySelector("#profile-image").src).toBeTruthy();
+
+    // external links
+    let links = compiled.querySelector("#profile-links").querySelectorAll("a");
+    expect(links).toBeTruthy();
+    expect(links.length).toBe(2);
+
+    expect(links["0"].href).toBe(Text.page[0].links[0]);
+    expect(links["1"].href).toBe(Text.page[0].links[1]);
+
   });
 
   // it("should render the buttons", () => {
