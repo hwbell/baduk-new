@@ -1,35 +1,48 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ReviewsComponent } from './reviews.component';
-import {GameReviewComponent} from '../game-review/game-review.component';
-import {GamePlayerComponent} from '../../game-player/game-player.component';
+import { ReviewsComponent } from "./reviews.component";
+import { GameReviewComponent } from "../game-review/game-review.component";
+import { GamePlayerComponent } from "../../game-player/game-player.component";
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule
+} from "@angular/material";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const sampleReviews = [
   {
-    type: 'review',
-    title: 'Lee Changho vs Gu Li',
-    description: 'This is an epic game between two masters!'
+    type: "review",
+    title: "Lee Changho vs Gu Li",
+    description: "This is an epic game between two masters!"
   },
   {
-    type: 'review',
-    title: 'Lee Changho vs Lee Sedol',
-    description: 'This is an epic game between a solid player and a complex player!'
+    type: "review",
+    title: "Lee Changho vs Lee Sedol",
+    description:
+      "This is an epic game between a solid player and a complex player!"
   },
   {
-    type: 'review',
-    title: 'Lee Changho vs Choi Cheolhan',
-    description: 'This is an epic game between Choi Chelhan, master of fighting, and Lee Changho, master of calculation!'
+    type: "review",
+    title: "Lee Changho vs Choi Cheolhan",
+    description:
+      "This is an epic game between Choi Chelhan, master of fighting, and Lee Changho, master of calculation!"
   }
 ];
 
-describe('ReviewsComponent', () => {
+describe("ReviewsComponent", () => {
   let component: ReviewsComponent;
   let fixture: ComponentFixture<ReviewsComponent>;
   let compiled, reviews;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [],
+      imports: [
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule
+      ],
       declarations: [ReviewsComponent, GameReviewComponent, GamePlayerComponent]
     }).compileComponents();
   }));
@@ -49,17 +62,17 @@ describe('ReviewsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it('should contain the correct elements', () => {
+  it("should contain the correct elements", () => {
     expect(compiled.querySelector(".reviews")).toBeTruthy();
     expect(compiled.querySelector(".reviews-title")).toBeTruthy();
     expect(compiled.querySelectorAll("app-game-review").length).toBeTruthy();
   });
 
-  it('should set its data correctly', () => {
+  it("should set its data correctly", () => {
     expect(reviews.reviews).toBe(sampleReviews);
   });
 });

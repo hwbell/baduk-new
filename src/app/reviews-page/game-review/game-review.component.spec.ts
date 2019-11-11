@@ -2,9 +2,15 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { GameReviewComponent } from "./game-review.component";
 import { GamePlayerComponent } from "../../game-player/game-player.component";
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule
+} from "@angular/material";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const sampleReview = {
-  id: '89e98chajjaldn',
+  id: "89e98chajjaldn",
   type: "review",
   title: "Lee Changho vs Choi Cheolhan",
   description:
@@ -18,7 +24,7 @@ describe("GameReviewComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [],
+      imports: [BrowserAnimationsModule, MatButtonModule, MatFormFieldModule, MatInputModule],
       declarations: [GameReviewComponent, GamePlayerComponent]
     }).compileComponents();
   }));
@@ -29,6 +35,8 @@ describe("GameReviewComponent", () => {
     compiled = fixture.debugElement.nativeElement;
     review = fixture.debugElement.componentInstance;
     review.gameReview = sampleReview;
+    // set the selector
+    review.selector = sampleReview.id;
     fixture.detectChanges();
   });
 
@@ -41,13 +49,45 @@ describe("GameReviewComponent", () => {
     expect(compiled.querySelector(".review-title")).toBeTruthy();
     expect(compiled.querySelector(".review-description")).toBeTruthy();
     expect(compiled.querySelector(".eidogo-player-auto")).toBeTruthy();
+    expect(compiled.querySelector("#user-comments")).toBeTruthy();
+    expect(compiled.querySelector(".review-comment")).toBeTruthy();
+    expect(compiled.querySelector(".comment-input")).toBeTruthy();
   });
 
   it("should set the gameReview id properly", () => {
-    // set the selector
-    review.selector = sampleReview.id;
-    fixture.detectChanges();
-
     expect(compiled.querySelector("#game-" + sampleReview.id)).toBeTruthy();
+  });
+
+  it("should set the sgf to the player", () => {
+    fixture.detectChanges();
+    expect(review.gameReview).toBeTruthy();
+    // let player = document.querySelector('.eidogo-player-auto');
+    // let sgf = player.attributes[3]
+  });
+
+  // test the initial state and the toggling here
+  it("should toggle the expanded boolean", () => {
+    // should start out false
+    expect(review.expanded).toBe(false);
+
+    let game = compiled.querySelector(".eidogo-player-auto");
+    expect(game).toBeTruthy();
+    expect(game["hidden"]).toBe(true);
+
+    // toggle it manually
+    review.toggleExpanded();
+    fixture.detectChanges();
+    expect(review.expanded).toBe(true);
+    // toggle it back manually to false
+    review.toggleExpanded();
+    fixture.detectChanges();
+    expect(review.expanded).toBe(false);
+
+    // click the div directly
+    let reviewDiv = compiled.querySelector(".game-review");
+    reviewDiv.click();
+    fixture.detectChanges();
+    expect(review.expanded).toBe(true);
+    expect(game["hidden"]).toBe(false);
   });
 });

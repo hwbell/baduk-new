@@ -37,13 +37,11 @@
     display: none;
 }
 .eidogo-player .controls-container {
-	width: 375px;
-	float: right;
 	position: relative;
 	padding: 5px 0 0 0;
-    background: #466;
-    color: #8aa;
-    -webkit-user-select: none;
+  background: whitesmoke;
+  color: black;
+  -webkit-user-select: none;
 }
 .eidogo-player .controls {
 	height: 30px;
@@ -107,7 +105,7 @@
 	position: absolute;
 	top: 12px;
 	left: 230px;
-	color: #acc;
+	color: black;
 }
 .eidogo-player .permalink {
     text-decoration: underline;
@@ -117,18 +115,18 @@
 	clear: both;
 	position: relative;
 	height: 10px;
-	width: 365px;
-	margin: 0px 5px 5px 5px;
-	border-top: 1px solid #122;
-	background: #244;
+	width: 446px;
+	margin: 5px 5px 5px 0px;
+	/* border-top: 1px solid #122; */
+	background: whitesmoke;
 }
 .eidogo-player .nav-slider-thumb {
-    position: absolute;
+  position: absolute;
 	width: 9px;
 	height: 9px;
-	background: #d11;
-    border-bottom: 1px solid #800;
-    border-right: 1px solid #800;
+  background: rgb(76, 109, 161);
+  border: 1px solid rgb(44, 65, 97);
+  border-radius: 4px;
 	cursor: pointer;
 }
 .eidogo-player .variations-container {
@@ -144,7 +142,7 @@
 .eidogo-player .variation-nav {
 	float: left;
     background: #799;
-    color: #b00;
+    color: rgb(66, 66, 170);
 	font-weight: bold;
 	margin: 1px;
 	position: relative;
@@ -223,11 +221,12 @@
 	margin: 0 0 10px 0;
 }
 .eidogo-player .comment-info {
-    color: #443;
+    color: black;
     font-weight: bold;
     margin: 0 0 10px 0;
-    padding: 5px;
-    background: #aa9;
+    padding: 0px;
+    /* width: 446px; */
+    background-color: whitesmoke;
 }
 .eidogo-player .comment-info dl {
     padding-top: 5px;
@@ -244,17 +243,10 @@
     padding: 0 0 3px 0;
 }
 .eidogo-player .comments {
-	clear: right;
-	float: right;
-	width: 356px;
 	height: 243px;
 	font-size: 11px;
-	margin: 5px 0 0 0;
-	padding: 15px 8px 40px 8px;
-	overflow: auto;
-    background: #bba;
-    border-left: 3px solid #998;
-    border-top: 2px solid #998;
+  margin: 5px 0 0 0;
+  background-color: whitesmoke;
 }
 .eidogo-player .comments-edit {
     display: none;
@@ -269,11 +261,11 @@
     font-family: arial, helvetica, sans-serif;
     padding: 15px 0px 40px 10px;
     margin: 0 5px 0 0;
-    background: #eee;
+    /* background: #eee;
     border-left: 3px solid #ccc;
     border-top: 2px solid #ccc;
     border-right: none;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #999; */
 }
 .eidogo-player .comments-edit-done, .eidogo-player .game-info-edit-done {
     clear: right;
@@ -285,9 +277,9 @@
     text-align: center;
     background: #ccc url(../images/done_bg.png) repeat-x;
     color: #222;
-    border: 2px solid #999;
-    border-top: 2px solid #fff;
-    border-left: 2px solid #fff;
+    /* border: 2px solid #999; */
+    /* border-top: 2px solid #fff;
+    border-left: 2px solid #fff; */
     cursor: pointer;
     font-weight: bold;
     font-size: 12px;
@@ -300,7 +292,7 @@
     z-index: 9999;
     width: 375px;
     height: 300px;
-    background: #ccc;
+    /* background: #ccc; */
     margin: 0;
     padding: 0;
 }
@@ -407,9 +399,9 @@
 }
 .eidogo-player .board-container {
     /* float: left; */
-	width: 444px;
+	width: 446px;
 	height: 444px;
-    background: #654;
+    background: whitesmoke;
 	user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -419,7 +411,7 @@
     height: auto;
     padding: 0px !important;
     margin: 0px !important;
-    background: none;
+    /* background: none; */
 }
 .eidogo-player .board-gutter {
   width: 100%;
@@ -431,7 +423,7 @@
 	-moz-user-select: none;
 }
 .eidogo-player .board-gutter.with-coords {
-    background: #654 url(../images/board-bg-coords.png) no-repeat;
+    background: rgb(223, 189, 110) url(../images/board-bg-coords.png) no-repeat;
     background-size: 97%;
     background-position: 3px 5px;
 }
@@ -453,7 +445,7 @@
 	position: absolute;
 	width: 390px;
 	height: 390px;
-	background: #E8C473 url(../images/board-19-simple.gif);
+	background: rgb(223, 189, 110) url(../images/board-19-simple.gif);
   background-size: 100%;
 }
 .eidogo-player .board .point {
@@ -801,22 +793,22 @@
 .eidogo-player.theme-compact {
     width: 446px;
     padding: 0;
-    background: #555;
-    border: 1px solid #555;
+    background: whitesmoke;
+    /* border: 1px solid #555; */
 }
 .eidogo-player.theme-compact .board.size19 {
     background-image: url(../images/board-19-simple.gif) !important;
 }
 .eidogo-player.theme-compact .controls-container {
-    width: 421px;
-    border-top: 1px solid #244;
+    width: 446px;
     padding-top: 0;
 }
 .eidogo-player.theme-compact .move-number {
     top: 9px;
 }
 .eidogo-player.theme-compact .nav-slider {
-    width: 411px;
+  background: linear-gradient(to right, whitesmoke, silver, grey);
+  width: 446px;
 }
 .eidogo-player.theme-compact .variations-container {
     display: none;
@@ -829,17 +821,12 @@
 }
 .eidogo-player.theme-compact .comments {
     margin: 0;
-    width: 401px;
-    height: 50px;
-    padding: 5px 10px;
-    border: none;
-    background: #ccb;
-    border-top: 3px solid #aa9;
-    overflow: auto;
-    float: none;
+    width: 446px;
+    height: 120px;
+    padding: 5px;
 }
 .eidogo-player.theme-compact .comment-info {
-    background: #bba;
+    background-color: whitesmoke;
 }
 .eidogo-player.theme-compact .comments-edit-ta {
     margin: 0 !important;
@@ -847,13 +834,13 @@
     height: 50px;
     padding: 5px 0 5px 10px;
     border: none;
-    background: #eee;
-    border-top: 3px solid #ddd;
+    /* background: #eee; */
+    /* border-top: 3px solid #ddd; */
     overflow: auto;
     float: none;
     font-size: 11px;
     font-family: arial, helvetica, sans-serif;
-    border-bottom: 1px solid #999;
+    /* border-bottom: 1px solid #999; */
 }
 .eidogo-player.theme-compact .comments-edit-done {
     float: none;
@@ -864,8 +851,8 @@
     text-align: center;
     background: #ccc url(../images/done_bg.png) repeat-x;
     color: #222;
-    border: 1px solid #555;
-    border-top: 1px solid #fff !important;
+    /* border: 1px solid #555;
+    border-top: 1px solid #fff !important; */
     position: relative;
     left: -1px;
     cursor: pointer;
@@ -873,7 +860,7 @@
     font-size: 12px;
 }
 .eidogo-player.theme-compact .info {
-    width: 421px;
+    width: 446px;
     padding: 0;
     margin: 0;
 }
@@ -894,7 +881,7 @@
     border-top: 1px solid #222 !important;
 }
 .eidogo-player.theme-compact .options {
-    background: #333;
+    /* background: #333; */
     border-top: 1px solid #555;
 }
 .eidogo-player.theme-compact .options-stop {
@@ -907,10 +894,10 @@
     border: none;
     color: #aaa;
     text-decoration: none;
-    background: #444;
+    background: whitesmoke;
 }
 .eidogo-loading.theme-compact {
-    background: none;
+    /* background: none; */
     width: 0;
     height: 0;
 }
@@ -931,22 +918,19 @@
     width: 150px;
     height: auto;
     padding: 1px;
-    background: #666;
+    /* background: #666; */
 }
 .eidogo-player.theme-problem .board-container {
     width: auto;
     height: auto;
     min-height: 50px;
-    background: #555;
+    /* background: #555; */
 }
 .eidogo-player.theme-problem .board.size19 {
     background-image: url(../images/board-19-simple.gif) !important;
 }
 .eidogo-player.theme-problem .controls-container {
-    float: none;
-    width: auto;
-    background: #333;
-    padding: 0;
+  width: 100%
 }
 .eidogo-player.theme-problem .controls {
     height: 19px;
@@ -959,7 +943,7 @@
 .eidogo-player.theme-problem .comments {
     float: none;
     margin: 0;
-    background: #ccc;
+    width: 100%;
     border: none;
     padding: 5px;
     width: auto;

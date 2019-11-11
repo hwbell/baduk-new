@@ -7,6 +7,22 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class GameReviewComponent implements OnInit {
 
+  game = "";
+  expanded = false;
+
+  icons = [
+    {
+      class: `go-board-icon`
+    },
+    {
+      class: `fas fa-file-download`
+    },
+    {
+      class: `fas fa-question`
+    },
+
+  ];
+
   @Input() selector: string;
 
   @Input() gameReview: {
@@ -21,14 +37,17 @@ export class GameReviewComponent implements OnInit {
 
   constructor() {}
 
-  // setSgfContent () {
-  //   console.log(this.selector)
-  //   let el = document.querySelector('#23fg3g5g435315t3')
-  //   el.setAttribute('sgf', this.gameReview.game);
-  // }
+  setSgfContent () {
+    this.game = this.gameReview.game;
+    console.log(this.game);
+  }
+
+  toggleExpanded() {
+    this.expanded = !this.expanded;
+  }
 
   ngOnInit() {
-    // console.log(document.querySelector('.eidogo-player-auto'))
-    // this.setSgfContent();
+    this.setSgfContent();
+    // location.reload();
   }
 }

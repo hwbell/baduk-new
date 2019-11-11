@@ -1,14 +1,5 @@
-import { Component, OnInit, NgModule } from "@angular/core";
-import { FormBuilder, Form } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
 import { Thread } from "../../../classes/thread";
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
 import { ServerService } from 'src/services/server.service';
 @Component({
   selector: "app-article-form",
@@ -16,6 +7,7 @@ import { ServerService } from 'src/services/server.service';
   styleUrls: ["./article-form.component.sass"],
   providers: [ServerService]
 })
+
 export class ArticleFormComponent implements OnInit {
 
   constructor( private serverService: ServerService ) {

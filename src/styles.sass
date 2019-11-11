@@ -1,14 +1,30 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css'
+@import url('http://fonts.googleapis.com/css?family=Raleway:300,400,500,600')
+@import url('http://fonts.googleapis.com/css?family=Quicksand:300,400,500,600')
 
 /* You can add global styles to this file, and also import other style files */
 $paragraph-fontSize: 16px
 $icon-fontSize: 16px
+
+*
+  font-family: Quicksand
+  font-weight: 400
 
 .right-all-row
   display: flex
   flex-direction: row
   justify-content: flex-end
   align-items: center
+.left-all-row
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+.space-all-row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: flex-start
 .center-all-row
   display: flex
   flex-direction: row
@@ -66,8 +82,9 @@ $icon-fontSize: 16px
 @mixin menu-icon
   background-size: 100% 100%
   display: block
-  height: 20px
-  width: 20px
+  height: 18px
+  width: 18px
+
 .go-board-icon
   background: url('./assets/images/go-board.png')
   @include menu-icon
@@ -78,3 +95,33 @@ $icon-fontSize: 16px
 .square-icon
   background: url('./assets/images/square.png')
   @include text-icon
+
+// ********* rules for ng-bootstap modal animation ********** //
+.modal .modal-dialog, .modal-content, .modal-header, .modal-body
+  // transition: all 3s ease
+  border-radius: 10px
+  animation-name: fade
+  animation-duration: 0.5s
+@keyframes fade
+  0%
+    opacity: 0.1
+  100%
+    opacity: 1
+
+.modal-open
+  overflow: visible
+  padding-right: 0 !important
+// ***** ////
+
+// ***** rules for accordion form ***** ////I
+.form-container
+  animation-name: fade-down
+  animation-duration: 0.5s
+@keyframes fade-down
+  0%
+    opacity: 0.1
+    transform: scale(0.01)
+  100%
+    opacity: 1
+    transform: scale(1)
+// ***** //

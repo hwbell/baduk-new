@@ -29,6 +29,7 @@ import { FooterComponent } from "./home-page/footer/footer.component";
 import { GameReviewComponent } from './reviews-page/game-review/game-review.component';
 import { ReviewsComponent } from './reviews-page/reviews/reviews.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ProfileFormComponent } from './profile-page/profile-form/profile-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     FooterComponent,
     GameReviewComponent,
     ReviewsComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    ProfileFormComponent,
   ],
   imports: [
     AppRoutingModule,

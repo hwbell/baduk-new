@@ -1,6 +1,32 @@
-<div class="game-review">
-  <p class="review-title">{{gameReview.title}}</p>
-  <p class="review-description">{{gameReview.description}}</p>
+<div class="game-review center-all-col" (click)="toggleExpanded()">
+  <p class="review-title">{{ gameReview.title }}</p>
+  <p class="review-description">{{ gameReview.description }}</p>
   <!-- VERY IMPORTANT!!! use the syntax below to bind to a custom property other than id or class or style etc. -->
-  <div id="game-{{selector}}" class="eidogo-player-auto" attr.sgf="{{gameReview.game}}"></div>
+  <div
+    [hidden]="!expanded"
+    style="display: block;"
+    id="game-{{ selector }}"
+    class="eidogo-player-auto"
+    attr.sgf="{{ game }}"
+  ></div>
+
+  <!-- upvotes / stones -->
+  <div id="user-ratings" class="left-all-row">
+    <div *ngFor="let icon of icons">
+      <span class="{{ icon.class }} rating-icon"></span>
+    </div>
+  </div>
+
+  <!-- comments from users -->
+  <div id="user-comments">
+    <!-- add comment input -->
+    <form class="review-comment">
+      <mat-form-field class="comment-input">
+        <textarea
+          matInput
+          placeholder="leave a comment or ask a question"
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </div>
 </div>

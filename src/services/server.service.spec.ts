@@ -20,7 +20,8 @@ describe('ServerService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get data', () => {
-
+  it('should get user data', () => {
+    const service: ServerService = TestBed.get(ServerService);
+    expect(service.getUser()).toBeTruthy();
   });
 });
