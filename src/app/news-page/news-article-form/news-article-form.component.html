@@ -1,0 +1,37 @@
+<div class="example-container">
+  <button
+    *ngIf="!formOpen"
+    (click)="toggleForm()"
+    class="btn btn-outline-primary"
+  >
+    Post a news article
+  </button>
+  <!-- the form that will open / close -->
+  <div class="form-container" *ngIf="formOpen">
+    <div class="right-all-row">
+      <!-- buttons to select file or cancel -->
+      <app-news-info-form></app-news-info-form>
+      <button (click)="toggleForm()" class="btn btn-outline-danger">
+        cancel
+      </button>
+    </div>
+
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Give your post a title"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Provide a brief description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Tag your post so other players can find it"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
