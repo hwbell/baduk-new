@@ -37,17 +37,11 @@ export class GameReviewComponent implements OnInit {
 
   constructor() {}
 
-  setSgfContent () {
-    this.game = this.gameReview.game;
-    console.log(this.game);
-  }
-
   toggleExpanded() {
     this.expanded = !this.expanded;
   }
 
   ngOnInit() {
-    this.setSgfContent();
-    // location.reload();
+    console.log(`inititalizing game review ${this.gameReview.game}`)
   }
 }

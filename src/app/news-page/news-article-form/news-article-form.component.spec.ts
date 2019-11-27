@@ -96,10 +96,9 @@ describe("NewsArticleFormComponent", () => {
     expect(compiled.querySelector(".form-container")).toBeTruthy();
     expect(compiled.querySelector("app-news-info-form")).toBeTruthy();
 
-
     // test with button click directly
     let cancelButton = compiled.querySelector(".btn-outline-danger");
-    let infoButton = compiled.querySelector(".btn-outline-info");
+    let infoButton = compiled.querySelector(".btn-outline-primary");
 
     expect(cancelButton).toBeTruthy();
     expect(infoButton).toBeTruthy();

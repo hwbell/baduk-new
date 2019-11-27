@@ -3,32 +3,30 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { AboutPageComponent } from "./about-page/about-page.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { NewsPageComponent } from './news-page/news-page.component';
-import { ReviewsPageComponent } from './reviews-page/reviews-page.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
-
+import { NewsPageComponent } from "./news-page/news-page.component";
+import { ReviewsPageComponent } from "./reviews-page/reviews-page.component";
+import { ProfilePageComponent } from "./profile-page/profile-page.component";
 
 const routes: Routes = [
-  { path: "home",
-    component: HomePageComponent,
-  },
+  { path: "", component: HomePageComponent },
+  { path: "home", component: HomePageComponent },
   {
     path: "about",
-    component: AboutPageComponent,
+    component: AboutPageComponent
   },
   {
     path: "news",
-    component: NewsPageComponent,
+    component: NewsPageComponent
   },
   {
     path: "reviews",
-    component: ReviewsPageComponent,
+    component: ReviewsPageComponent
   },
   {
     path: "profile",
-    component: ProfilePageComponent,
+    component: ProfilePageComponent
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({

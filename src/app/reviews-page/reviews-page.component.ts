@@ -21,7 +21,7 @@ export class ReviewsPageComponent implements OnInit {
       id: '23fg3g5g435315t3',
       type: 'review',
       title: 'Lee Changho vs Gu Li',
-      game: '../../assets/games/shin-jinseo.sgf',
+      game: '../../assets/games/go4go_20191028_Xu-Jiayang_Shin-Jinseo.sgf',
       description: 'This is an epic game between two masters!',
       comments: [
         {

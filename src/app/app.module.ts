@@ -23,6 +23,7 @@ import { AboutPageComponent } from "./about-page/about-page.component";
 import { ReviewsPageComponent } from "./reviews-page/reviews-page.component";
 import { NewsPageComponent } from "./news-page/news-page.component";
 import { ArticleFormComponent } from "./reviews-page/article-form/article-form.component";
+import { NewsArticleFormComponent } from "./news-page/news-article-form/news-article-form.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { NavigatorComponent } from "./navigator/navigator.component";
 import { FooterComponent } from "./home-page/footer/footer.component";
@@ -30,6 +31,9 @@ import { GameReviewComponent } from './reviews-page/game-review/game-review.comp
 import { ReviewsComponent } from './reviews-page/reviews/reviews.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileFormComponent } from './profile-page/profile-form/profile-form.component';
+import { NewsArticleComponent } from './news-page/news-article/news-article.component';
+import { NewsComponent } from './news-page/news/news.component';
+import { NewsInfoFormComponent } from './news-page/news-info-form/news-info-form.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +43,9 @@ import { ProfileFormComponent } from './profile-page/profile-form/profile-form.c
     HomePageComponent,
     AboutPageComponent,
     ReviewsPageComponent,
-    NewsPageComponent,
     ArticleFormComponent,
+    NewsPageComponent,
+    NewsArticleFormComponent,
     PageNotFoundComponent,
     NavigatorComponent,
     FooterComponent,
@@ -48,6 +53,9 @@ import { ProfileFormComponent } from './profile-page/profile-form/profile-form.c
     ReviewsComponent,
     ProfilePageComponent,
     ProfileFormComponent,
+    NewsArticleComponent,
+    NewsComponent,
+    NewsInfoFormComponent,
   ],
   imports: [
     AppRoutingModule,

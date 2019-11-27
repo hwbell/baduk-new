@@ -49,6 +49,8 @@ describe("GameReviewComponent", () => {
     expect(compiled.querySelector(".review-title")).toBeTruthy();
     expect(compiled.querySelector(".review-description")).toBeTruthy();
     expect(compiled.querySelector(".eidogo-player-auto")).toBeTruthy();
+
+    expect(compiled.querySelector("#user-ratings")).toBeTruthy();
     expect(compiled.querySelector("#user-comments")).toBeTruthy();
     expect(compiled.querySelector(".review-comment")).toBeTruthy();
     expect(compiled.querySelector(".comment-input")).toBeTruthy();

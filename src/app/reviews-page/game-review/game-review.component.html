@@ -4,10 +4,9 @@
   <!-- VERY IMPORTANT!!! use the syntax below to bind to a custom property other than id or class or style etc. -->
   <div
     [hidden]="!expanded"
-    style="display: block;"
     id="game-{{ selector }}"
     class="eidogo-player-auto"
-    attr.sgf="{{ game }}"
+    attr.sgf="{{ gameReview.game }}"
   ></div>
 
   <!-- upvotes / stones -->

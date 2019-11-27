@@ -13,7 +13,7 @@
  * 'eidogo-player-problem'
 **/
 (function() {
-    
+
     var autoCfg = window.eidogoConfig || {};
     var problemCfg = {
         theme:          "problem",
@@ -22,18 +22,18 @@
         markNext:       false,
         shrinkToFit:    true
     };
-    var scriptPath = eidogo.util.getPlayerPath();    
+    var scriptPath = eidogo.util.getPlayerPath();
     var path = eidogo.playerPath = (autoCfg.playerPath || scriptPath || 'player').replace(/\/$/, "");
-    
+
     if (!autoCfg.skipCss) {
         eidogo.util.addStyleSheet(path + '/css/player.css');
         if (eidogo.browser.ie && parseInt(eidogo.browser.ver, 10) <= 6) {
             eidogo.util.addStyleSheet(path + '/css/player-ie6.css');
         }
     }
-    
-    eidogo.util.addEvent(window, "load", function() {        
-        
+
+    eidogo.util.addEvent(window, "load", function() {
+
         eidogo.autoPlayers = [];
         var els = [];
         var divs = document.getElementsByTagName('div');
@@ -52,18 +52,18 @@
             if (eidogo.util.hasClass(el, "eidogo-player-problem"))
                 for (var key in problemCfg)
                     cfg[key] = problemCfg[key];
-            
+
             var sgfUrl = el.getAttribute('sgf');
             if (sgfUrl) cfg.sgfUrl = sgfUrl;
             else if (el.innerHTML) cfg.sgf = el.innerHTML;
-            
+
             el.innerHTML = "";
             eidogo.util.show(el);
-            
+
             var player = new eidogo.Player(cfg);
             eidogo.autoPlayers.push(player);
         }
-        
+
     });
-    
+
 })();
