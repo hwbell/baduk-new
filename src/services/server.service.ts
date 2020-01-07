@@ -7,7 +7,7 @@ import {Profile} from '../classes/profile';
   providedIn: "root"
 })
 export class ServerService {
-  userProfile = new Profile(
+  defaultUserProfile = new Profile(
     'Lee Changho',
     '9p',
     `"Stone Buddha" is one of Lee's many nicknames. It derives from the
@@ -29,8 +29,22 @@ export class ServerService {
     ["https://en.wikipedia.org/wiki/Lee_Chang-ho", "https://senseis.xmp.net/?YiChangHo"] // link to server pages, or anything else
   )
 
+  serverUrl = 'http://localhost:3000/collections/all/date/1';
+
+  getData() {
+    return this.http.get(this.serverUrl);
+  }
+
   getUser() {
-    return this.userProfile;
+
+    // get the data from the server user, if there is a user signed in
+
+    // update with data present/absent
+    if (false) {
+      return null;
+    } else {
+      return this.defaultUserProfile;
+    }
   }
 
   constructor(private http: HttpClient) {}
