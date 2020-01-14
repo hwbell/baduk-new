@@ -34,6 +34,7 @@ import { ProfileFormComponent } from './profile-page/profile-form/profile-form.c
 import { NewsArticleComponent } from './news-page/news-article/news-article.component';
 import { NewsComponent } from './news-page/news/news.component';
 import { NewsInfoFormComponent } from './news-page/news-info-form/news-info-form.component';
+import { LoginFormComponent } from './profile-page/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { NewsInfoFormComponent } from './news-page/news-info-form/news-info-form
     NewsArticleComponent,
     NewsComponent,
     NewsInfoFormComponent,
+    LoginFormComponent,
   ],
   imports: [
     AppRoutingModule,

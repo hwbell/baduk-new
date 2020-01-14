@@ -5,6 +5,14 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { ServerService } from './server.service';
 
+// update this sample user to match the real form
+let sampleUser = {
+  name: 'jeff',
+  email: 'jeff@markmail.com',
+  password: 'lasangahog',
+  rank: '8d'
+}
+
 describe('ServerService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
@@ -22,6 +30,6 @@ describe('ServerService', () => {
 
   it('should get user data', () => {
     const service: ServerService = TestBed.get(ServerService);
-    expect(service.getUser()).toBeTruthy();
+    expect(service.getUser(sampleUser)).toBeTruthy();
   });
 });

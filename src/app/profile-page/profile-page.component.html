@@ -1,48 +1,56 @@
 <div id="profile-page" class="page">
   <div class="content profile-content center-all-col">
     <div class="text-content left-all-col">
-      <div id="profile-title" class="space-all-row row">
-        <div class="left-all-row col">
-          <h2>{{ text.page[0].name }}</h2>
-          <h2 id="rank">{{ text.page[0].rank }}</h2>
-        </div>
-        <div class="space-all-row col">
-          <app-profile-form></app-profile-form>
-          <i class="fas fa-leaf"></i>
-        </div>
+
+      <div *ngIf="!haveUserProfile" id="logged-out-content">
+        <app-login-form></app-login-form>
       </div>
 
-      <div class="row">
-        <div class="col-4">
-          <img
-            id="profile-image"
-            src="{{ text.page[0].avatar }}"
-            alt="Profile Picture"
-          />
-          <div class="left-all-col" id="profile-activity">
-            <p class="activity-stat">
-              {{ text.page[0].activity.reviews.length }} reviews
-            </p>
-            <p class="activity-stat">
-              {{ text.page[0].activity.articles.length }} articles
-            </p>
-            <p class="activity-stat">
-              {{ text.page[0].activity.comments.length }} comments
-            </p>
+
+      <div *ngIf="haveUserProfile" id="logged-in-content">
+        <div id="profile-title" class="space-all-row row">
+          <div class="left-all-row col">
+            <h2>{{ text.page[0].name }}</h2>
+            <h2 id="rank">{{ text.page[0].rank }}</h2>
+          </div>
+          <div class="space-all-row col">
+            <app-profile-form></app-profile-form>
+            <i class="fas fa-leaf"></i>
           </div>
         </div>
-        <div class="col-8">
-          <p id="profile-info">{{ text.page[0].info }}</p>
-        </div>
-      </div>
 
-      <div class="left-all-col" id="profile-links">
-        <a
-          *ngFor="let link of text.page[0].links"
-          target="_blank"
-          href="{{ link }}"
-          >{{ link }}</a
-        >
+        <div class="row">
+          <div class="col-4">
+            <img
+              id="profile-image"
+              src="{{ text.page[0].avatar }}"
+              alt="Profile Picture"
+            />
+            <div class="left-all-col" id="profile-activity">
+              <p class="activity-stat">
+                {{ text.page[0].activity.reviews.length }} reviews
+              </p>
+              <p class="activity-stat">
+                {{ text.page[0].activity.articles.length }} articles
+              </p>
+              <p class="activity-stat">
+                {{ text.page[0].activity.comments.length }} comments
+              </p>
+            </div>
+          </div>
+          <div class="col-8">
+            <p id="profile-info">{{ text.page[0].info }}</p>
+          </div>
+        </div>
+
+        <div class="left-all-col" id="profile-links">
+          <a
+            *ngFor="let link of text.page[0].links"
+            target="_blank"
+            href="{{ link }}"
+            >{{ link }}</a
+          >
+        </div>
       </div>
     </div>
   </div>

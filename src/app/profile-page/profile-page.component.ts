@@ -10,17 +10,29 @@ import { ServerService } from 'src/services/server.service';
   providers: [ServerService]
 })
 export class ProfilePageComponent implements OnInit {
+  // start out with no user
+  haveUserProfile = false;
+
   // get the profile from the ServerService
+
+
   text = Text;
   config = null;
+  user = {
+    name: 'jeff',
+    email: 'jeff@markmail.com',
+    password: 'lasangahog',
+    rank: '8d'
+  }
 
-  showConfig() {
-    this.server.getData()
+  showUser() {
+    this.server.getUser(this.user)
       .subscribe((data) => {
         this.config = {
           profile: data
         };
         console.log(this.config);
+
       });
   }
 
@@ -28,7 +40,7 @@ export class ProfilePageComponent implements OnInit {
   constructor(private server: ServerService) {}
 
   ngOnInit() {
-    this.showConfig();
+    this.showUser();
   }
 
 }
